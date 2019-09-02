@@ -62,7 +62,7 @@ deploy: upload
 		--action lambda:GetLayerVersion \
 		--principal '*' \
 		--version-number $(version)
-	$(aws) lambda list-layers --query "Layers[?LayerName=='$(layer_name)']"
+	# $(aws) lambda list-layers --query "Layers[?LayerName=='$(layer_name)']"
 
 # Lists the ARN of the layer
 list:
