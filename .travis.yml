@@ -16,14 +16,14 @@ deploy:
 - provider: script
   skip_cleanup: true
   script:
-  - make upload list postgresql_version=${PG_VERSION} region=us-west-2 layer_name=postgresql-libpq-ssl-dev
+  - make deploy postgresql_version=${PG_VERSION} region=us-west-2 layer_name=postgresql-libpq-ssl-dev
   on:
     branch: dev
     condition: ${PG_VERSION} = 10.7
 - provider: script
   skip_cleanup: true
   script:
-  - make upload list postgresql_version=${PG_VERSION} region=us-west-2 layer_name=postgresql-libpq-ssl
+  - make deploy postgresql_version=${PG_VERSION} region=us-west-2 layer_name=postgresql-libpq-ssl
   on:
     branch: master
     condition: ${PG_VERSION} = 10.7
